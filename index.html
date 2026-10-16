@@ -1,0 +1,1529 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BTS Communication · La Persévérance</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1626">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Ccircle cx='9' cy='9' r='4' fill='%23C1121F'/%3E%3Crect x='7' y='18' width='18' height='5' fill='%23F4B400'/%3E%3C/svg%3E">
+<meta name="description" content="Prototype du site du BTS Communication de La Persévérance, direction graphique « Plateau ».">
+<link rel="preload" href="barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Polices hébergées sur le site (licence SIL Open Font 1.1), sous-ensemble latin */
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url("barlow-400.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:500;font-display:swap;src:url("barlow-500.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:600;font-display:swap;src:url("barlow-600.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("barlow-condensed-600.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url("barlow-condensed-700.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("ibm-plex-mono-500.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:600;font-display:swap;src:url("ibm-plex-mono-600.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --nuit:#0B1626; --nuit-2:#13233A; --nuit-3:#1D3150; --trait-sombre:#24365A;
+  --bleu:#17386B; --bleu-clair:#E4EAF3;
+  --or:#F4B400; --or-fonce:#D99F00; --or-pale:#FFF4D1;
+  --rouge:#C1121F;
+  --papier:#F6F4EF; --blanc:#FFFFFF; --encre:#1A1F2B; --ardoise:#5A6475; --ligne:#DDD8CC;
+  --brume:#B8C3D4;
+  --f-titre:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-texte:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:6px;
+  --gouttiere:16px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--f-texte);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+figure{margin:0}
+a{color:var(--bleu);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--f-titre);line-height:1.05;margin:0 0 .4em;letter-spacing:.005em}
+h1{font-size:clamp(2.4rem,7.5vw,4.3rem);font-weight:700}
+h2{font-size:clamp(1.9rem,4.6vw,2.8rem);font-weight:700}
+h3{font-size:1.45rem;font-weight:600}
+p{margin:0 0 1em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gouttiere)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lien-evitement{position:absolute;left:-9999px;top:0;background:var(--or);color:var(--nuit);padding:.6em 1em;z-index:100;font-weight:600}
+.lien-evitement:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--bleu);outline-offset:2px}
+.sombre :focus-visible,.site-header :focus-visible,.site-footer :focus-visible,.carte-bleue :focus-visible{outline-color:var(--or)}
+main:focus{outline:none}
+
+/* Fonds */
+.sombre{background:var(--nuit);color:var(--blanc)}
+.sombre p a,.sombre .liste-puces a{color:var(--or)}
+.section{padding:56px 0}
+.section-blanche{background:var(--blanc)}
+
+/* Typo utilitaire */
+.eyebrow{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--bleu);margin:0 0 .9em;display:flex;flex-wrap:wrap;gap:.5em;align-items:center}
+.sombre .eyebrow,.carte-bleue .eyebrow{color:var(--or)}
+.lead{font-size:1.15rem;max-width:62ch}
+.sombre .lead{color:#E3E8F0}
+.meta{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ardoise)}
+.sombre .meta{color:var(--brume)}
+.h-petit{font-size:1.2rem;text-transform:uppercase;letter-spacing:.07em;font-weight:600;margin:1.8em 0 .8em}
+.liste-puces{padding-left:1.2em;margin:0 0 1em}
+.liste-puces li{margin-bottom:.45em}
+.liste-puces li::marker{color:var(--or-fonce)}
+
+/* Repères du prototype */
+.barre-proto{background:repeating-linear-gradient(-45deg,#2A2F38 0 10px,#232831 10px 20px);color:#F1F3F6;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.03em;padding:.55em var(--gouttiere);text-align:center;line-height:1.5}
+.barre-proto strong{color:var(--or)}
+.ac{display:inline-block;font-family:var(--f-mono);font-size:.74em;font-weight:600;letter-spacing:.02em;background:var(--or-pale);color:#5C4300;border:1.5px dashed #B98800;border-radius:4px;padding:.1em .5em;line-height:1.45;vertical-align:middle}
+h1 .ac{font-size:max(.3em,14px)}
+.sombre .ac,.site-footer .ac,.etablissement .ac{background:transparent;color:var(--or);border-color:var(--or)}
+.en-projet{display:inline-block;font-family:var(--f-mono);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--bleu-clair);color:var(--bleu);border-radius:3px;padding:.25em .55em;line-height:1.2;vertical-align:middle}
+.sombre .en-projet{background:var(--nuit-3);color:#DCE6F5}
+.note-proto{border:1.5px dashed var(--ardoise);border-radius:var(--r);padding:12px 16px;font-size:.92rem;color:var(--ardoise);margin:28px 0 0;max-width:820px}
+.note-proto::before{content:"Note du prototype";display:block;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:.3em;color:var(--encre)}
+.sombre .note-proto{border-color:#5B6E8E;color:var(--brume)}
+.sombre .note-proto::before{color:var(--blanc)}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--f-texte);font-weight:600;font-size:1rem;padding:.8em 1.25em;border-radius:var(--r);text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.1;transition:background-color .15s,color .15s,border-color .15s}
+.btn-or{background:var(--or);color:var(--nuit)}
+.btn-or:hover{background:var(--or-fonce)}
+.btn-contour{border-color:currentColor;color:var(--bleu);background:transparent}
+.sombre .btn-contour,.carte-bleue .btn-contour{color:var(--blanc)}
+.btn-contour:hover{background:rgba(23,56,107,.07)}
+.sombre .btn-contour:hover,.carte-bleue .btn-contour:hover{background:rgba(255,255,255,.08)}
+.btn-petit{padding:.55em .9em;font-size:.92rem}
+.fleche::after{content:"→"}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1.4em}
+
+/* Sélecteur du prototype */
+.barre-proto p{margin:0}
+.proto-choix{margin-top:.45em !important;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center}
+.proto-choix button{font:600 .68rem var(--f-mono);letter-spacing:.03em;background:transparent;border:1px solid #6B7280;color:#fff;border-radius:3px;padding:.25em .55em;cursor:pointer}
+.proto-choix button[aria-pressed="true"]{background:var(--or);color:var(--nuit);border-color:var(--or)}
+
+/* Bandeau d'annonce */
+.bandeau{font-size:.95rem;line-height:1.35;position:relative}
+.bandeau[hidden]{display:none}
+.bandeau-ligne{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;min-height:46px;padding-top:9px;padding-bottom:9px;padding-right:calc(var(--gouttiere) + 40px)}
+.bandeau-puce{font-family:var(--f-mono);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.38em .62em;border-radius:3px;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;line-height:1}
+.bandeau-texte{margin:0}
+.bandeau-lien{font-weight:600;white-space:nowrap;text-underline-offset:3px;color:inherit}
+.bandeau-lien::after{content:" →"}
+.bandeau-fermer{position:absolute;right:calc(var(--gouttiere) - 6px);top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;background:transparent;color:inherit;font-size:1.35rem;line-height:1;cursor:pointer;border-radius:4px;display:grid;place-items:center}
+.bandeau-fermer:hover{background:rgba(0,0,0,.08)}
+.bandeau-point{width:8px;height:8px;border-radius:50%;background:#fff;animation:clignote 1.2s steps(2,start) 4}
+/* les cinq variantes */
+.bandeau-parcoursup{background:var(--or);color:var(--nuit)}
+.bandeau-parcoursup .bandeau-puce{background:var(--nuit);color:var(--or)}
+.bandeau-jpo{background:var(--bleu);color:#fff}
+.bandeau-jpo .bandeau-puce{background:var(--or);color:var(--nuit)}
+.bandeau-jpo :focus-visible,.bandeau-direct :focus-visible{outline-color:var(--or)}
+.bandeau-jpo .bandeau-fermer:hover,.bandeau-direct .bandeau-fermer:hover{background:rgba(255,255,255,.1)}
+.bandeau-direct{background:var(--nuit-2);color:#fff;box-shadow:inset 0 3px 0 var(--rouge)}
+.bandeau-direct .bandeau-puce{background:var(--rouge);color:#fff}
+.bandeau-direct .bandeau-lien{color:var(--or)}
+.bandeau-nouveau{background:var(--papier);color:var(--encre);border-bottom:1px solid var(--ligne)}
+.bandeau-nouveau .bandeau-puce{background:var(--bleu);color:#fff}
+.bandeau-nouveau .bandeau-lien{color:var(--bleu)}
+.bandeau-etablissement{background:#fff;color:var(--encre);border-bottom:1px solid var(--ligne);font-size:.9rem}
+.bandeau-etablissement .bandeau-lien{color:var(--bleu)}
+.logo-vide{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:.2em .7em;border:1.5px dashed #9AA2AF;border-radius:4px;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ardoise);white-space:nowrap}
+.bandeau .etiquette-exemple{font-size:.75rem}
+@media (max-width:719px){
+  .bandeau{font-size:.9rem}
+  .bandeau-ligne{display:block;padding-top:10px;padding-bottom:10px}
+  .bandeau-puce{margin-right:8px;vertical-align:1px}
+  .bandeau-texte{display:inline}
+  .bandeau-lien{display:inline-block;margin-left:4px}
+  .bandeau .etiquette-exemple{margin-left:6px}
+  .bandeau-etablissement .logo-vide{display:none}
+}
+
+/* En-tête */
+.site-header{position:sticky;top:0;z-index:50;background:var(--nuit);color:var(--blanc);border-bottom:1px solid var(--trait-sombre)}
+.utilitaire{display:none}
+.entete-ligne{display:flex;align-items:center;gap:10px;min-height:64px;position:relative}
+.marque{display:flex;flex-direction:column;text-decoration:none;color:var(--blanc);margin-right:auto;line-height:1}
+.marque-nom{font-family:var(--f-titre);font-weight:700;font-size:1.55rem;letter-spacing:.05em;display:flex;align-items:center;gap:8px;margin:0}
+.marque-nom::before{content:"";width:10px;height:10px;background:var(--rouge);border-radius:50%;box-shadow:0 0 0 3px rgba(193,18,31,.25)}
+.marque-sous{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--brume);margin-top:5px;white-space:nowrap}
+@media (max-width:440px){.sous-lieu{display:none}}
+.menu-bouton{background:transparent;border:1px solid #3A4C6B;color:var(--blanc);font:600 .9rem var(--f-texte);padding:.55em .75em;border-radius:var(--r);cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.barres{width:16px;height:2px;background:currentColor;position:relative;display:inline-block}
+.barres::before,.barres::after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor}
+.barres::before{top:-5px}.barres::after{top:5px}
+.nav-principale{display:none}
+.nav-principale.ouvert{display:block;position:absolute;left:0;right:0;top:100%;background:var(--nuit);border-bottom:1px solid var(--trait-sombre);padding:6px var(--gouttiere) 20px;box-shadow:0 18px 30px rgba(0,0,0,.35)}
+.nav-principale ul{list-style:none;margin:0;padding:0}
+.nav-principale a{display:block;padding:.7em 0;color:var(--blanc);text-decoration:none;font-family:var(--f-titre);font-size:1.4rem;font-weight:600;letter-spacing:.02em;border-bottom:1px solid #1E2D46}
+.nav-principale a[aria-current="page"]{color:var(--or)}
+.nav-secondaire{margin-top:8px!important}
+.nav-secondaire a{font-family:var(--f-texte);font-size:1rem;font-weight:500;color:var(--brume);border:0;padding:.5em 0}
+
+/* Écran (photo cadrée façon caméra) */
+.ecran{position:relative;border-radius:4px;overflow:hidden;background:#000;aspect-ratio:4/3}
+.ecran>img{width:100%;height:100%;object-fit:cover}
+.ecran::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,38,.35),rgba(11,22,38,0) 28%,rgba(11,22,38,0) 58%,rgba(11,22,38,.7));pointer-events:none}
+.viseur{position:absolute;inset:14px;pointer-events:none;z-index:2;--c:rgba(255,255,255,.92);--l:26px;--e:2px;
+  background:
+   linear-gradient(var(--c),var(--c)) top left/var(--l) var(--e),linear-gradient(var(--c),var(--c)) top left/var(--e) var(--l),
+   linear-gradient(var(--c),var(--c)) top right/var(--l) var(--e),linear-gradient(var(--c),var(--c)) top right/var(--e) var(--l),
+   linear-gradient(var(--c),var(--c)) bottom left/var(--l) var(--e),linear-gradient(var(--c),var(--c)) bottom left/var(--e) var(--l),
+   linear-gradient(var(--c),var(--c)) bottom right/var(--l) var(--e),linear-gradient(var(--c),var(--c)) bottom right/var(--e) var(--l);
+  background-repeat:no-repeat}
+.rec{position:absolute;top:24px;left:26px;z-index:3;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.76rem;font-weight:600;color:#fff;background:rgba(11,22,38,.72);padding:.35em .6em;border-radius:3px;letter-spacing:.06em}
+.rec-point{width:9px;height:9px;border-radius:50%;background:var(--rouge);animation:clignote 1.2s steps(2,start) 4}
+@keyframes clignote{to{visibility:hidden}}
+.ecran-pause{position:absolute;top:22px;right:24px;z-index:3;background:rgba(11,22,38,.72);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:3px;font:600 .75rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:.4em .65em;cursor:pointer}
+.synthe{position:absolute;left:26px;right:26px;bottom:24px;z-index:3;display:flex;flex-direction:column;align-items:flex-start}
+.synthe-titre{background:var(--blanc);color:var(--nuit);font-family:var(--f-titre);font-weight:700;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em;padding:.22em .6em;border-left:6px solid var(--or)}
+.synthe-sous{background:var(--nuit);color:var(--blanc);font-size:.86rem;padding:.3em .7em;margin-left:6px}
+
+/* Emplacements photo de la version publique */
+.photo-a-venir{display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brume);line-height:1.8;background:radial-gradient(ellipse at 30% 20%,rgba(244,180,0,.12),transparent 55%),repeating-linear-gradient(135deg,#16273F 0 14px,#1A2C47 14px 28px)}
+.ecran .photo-a-venir{position:absolute;inset:0}
+.photo-a-venir-portrait{aspect-ratio:4/5;border-radius:4px}
+
+/* Accueil */
+.hero{padding:28px 0 44px}
+.hero-grille{display:grid;gap:28px}
+.hero h1 span{color:var(--or)}
+.statut{font-size:.9rem;color:var(--brume)!important;margin-top:1.4em;border-left:3px solid var(--or);padding-left:.8em;max-width:52ch}
+.section-titre{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 32px;margin-bottom:28px}
+.section-titre h2{margin:0}
+.section-titre>p{margin:0;max-width:50ch;color:var(--ardoise)}
+.sombre .section-titre>p{color:var(--brume)}
+
+/* Trois temps */
+.temps-grille{display:grid;gap:16px;list-style:none;padding:0;margin:0 0 28px}
+.temps{background:var(--blanc);border:1px solid var(--ligne);border-top:5px solid var(--bleu);padding:22px 22px 24px;border-radius:0 0 var(--r) var(--r)}
+.temps:nth-child(2){border-top-color:var(--or)}
+.temps:nth-child(3){border-top-color:var(--nuit)}
+.tc-label{font-family:var(--f-mono);font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bleu);display:flex;gap:.7em;align-items:baseline;margin:0 0 .8em}
+.tc-label b{font-size:1.55rem;color:var(--encre);letter-spacing:0}
+.sombre .tc-label{color:var(--or)}
+.sombre .tc-label b{color:var(--blanc)}
+.temps h3{font-size:1.5rem}
+.temps p{color:#3A4150}
+.puce-bloc{display:inline-block;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;background:var(--bleu-clair);color:var(--bleu);padding:.3em .55em;border-radius:3px;font-weight:600}
+
+/* Vidéos */
+.grille-videos{display:grid;gap:20px;list-style:none;padding:0;margin:0}
+.carte-video{background:var(--nuit-2);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;height:100%;text-decoration:none;color:var(--blanc);border:1px solid var(--trait-sombre);transition:border-color .2s}
+.carte-video:hover{border-color:var(--or)}
+.vignette{position:relative;display:block;aspect-ratio:16/9;background:var(--nuit-3);overflow:hidden}
+.vignette img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.carte-video:hover .vignette img{transform:scale(1.03)}
+.vignette-vide{display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.14em;color:var(--brume);background:repeating-linear-gradient(135deg,#16273F 0 14px,#1A2C47 14px 28px);text-transform:uppercase}
+.etiquettes{position:absolute;top:10px;left:10px;display:flex;flex-wrap:wrap;gap:6px;z-index:2}
+.lecture{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;background:rgba(11,22,38,.72);border:2px solid #fff;z-index:2;display:grid;place-items:center}
+.lecture::before{content:"";border-left:15px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.carte-corps{display:block;padding:14px 16px 18px}
+.carte-corps h3{font-size:1.32rem;margin:.3em 0 0}
+.etiquette{font-family:var(--f-mono);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.32em .55em;border-radius:3px;line-height:1;display:inline-block}
+.etiquette-editorial{background:var(--bleu);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.etiquette-commande{background:var(--or);color:var(--nuit)}
+.etiquette-exemple{background:#fff;color:var(--nuit);outline:1px dashed var(--nuit);outline-offset:-3px}
+
+/* Cartes d'information */
+.deux{display:grid;gap:24px}
+.carte-info{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--r);padding:26px}
+.carte-info h2{font-size:clamp(1.6rem,3.6vw,2.1rem)}
+.carte-bleue{background:var(--bleu);color:var(--blanc);border-color:var(--bleu)}
+.carte-bleue p{color:#E3E8F0}
+.oui,.non{list-style:none;padding:0;margin:0}
+.oui li,.non li{position:relative;padding-left:2em;margin-bottom:.7em}
+.oui li::before,.non li::before{position:absolute;left:0;top:.05em;font-weight:700;width:1.4em;height:1.4em;border-radius:50%;display:grid;place-items:center;font-size:.8rem}
+.oui li::before{content:"✓";background:var(--bleu-clair);color:var(--bleu)}
+.non li::before{content:"✕";background:#F8DDE0;color:var(--rouge)}
+
+/* FAQ */
+details.faq{border-bottom:1px solid var(--ligne)}
+.sombre details.faq{border-color:var(--trait-sombre)}
+details.faq summary{cursor:pointer;list-style:none;padding:16px 44px 16px 0;font-family:var(--f-titre);font-size:1.32rem;font-weight:600;position:relative;line-height:1.2}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--f-mono);font-size:1.4rem;color:var(--bleu)}
+.sombre details.faq summary::after{color:var(--or)}
+details.faq[open] summary::after{content:"–"}
+details.faq .rep{padding:0 0 16px;max-width:70ch}
+
+/* Établissement */
+.etablissement{background:var(--nuit);position:relative}
+.etablissement img{width:100%;height:clamp(180px,30vw,360px);object-fit:cover}
+.etablissement figcaption{padding:14px 0 16px;color:#fff}
+.etablissement figcaption .wrap{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-family:var(--f-titre);font-size:1.4rem;font-weight:600}
+
+/* Pages intérieures */
+.entete-page{padding:36px 0 40px}
+.fil{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brume);margin-bottom:1.3em}
+.sombre .fil a{color:var(--brume)}
+.sous-nav{display:flex;gap:8px;overflow-x:auto;padding:0;margin:26px 0 0;list-style:none;scrollbar-width:none}
+.sous-nav a{display:block;white-space:nowrap;padding:.5em .95em;border-radius:999px;border:1px solid #3A4C6B;color:#fff!important;text-decoration:none;font-weight:500;font-size:.95rem}
+.sous-nav a[aria-current="page"]{background:var(--or);color:var(--nuit)!important;border-color:var(--or)}
+.entete-grille{display:grid;gap:28px;align-items:center}
+.ecran-portrait{aspect-ratio:4/5;max-height:560px}
+.faits{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ligne);border:1px solid var(--ligne);border-radius:var(--r);overflow:hidden;margin:0}
+.fait{background:var(--blanc);padding:18px}
+.fait dt{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ardoise);margin-bottom:.45em}
+.fait dd{margin:0;font-family:var(--f-titre);font-size:1.45rem;font-weight:600;line-height:1.15}
+.photo-cadree{position:relative}
+.photo-cadree img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.photo-cadree .viseur{inset:12px}
+.photo-cadree figcaption{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ardoise);margin-top:8px}
+
+/* Frise des séquences */
+.frise{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.frise li{display:grid;grid-template-columns:2.6em 1fr;gap:12px;background:var(--papier);border:1px solid var(--ligne);border-radius:var(--r);padding:14px 16px}
+.frise .num{font-family:var(--f-mono);font-weight:600;color:var(--bleu);font-size:1.05rem}
+.frise strong{font-family:var(--f-titre);font-size:1.3rem;font-weight:600;display:block;line-height:1.1}
+.frise .meta{display:block;margin:.3em 0 .4em}
+.frise p{margin:0;color:#3A4150}
+
+/* Web TV */
+.page-sombre{background:var(--nuit);color:var(--blanc);padding-bottom:64px}
+.legende-etiquettes{display:grid;gap:10px;margin-top:22px;max-width:760px}
+.legende-etiquettes p{margin:0;display:flex;gap:12px;align-items:baseline;color:#E3E8F0}
+.legende-etiquettes .etiquette{flex:none;min-width:7.5em;text-align:center}
+.filtres{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.filtres-titre{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brume);margin-right:4px;width:100%}
+.filtre{background:transparent;border:1px solid #3A4C6B;color:#fff;border-radius:999px;padding:.45em .95em;font:500 .92rem var(--f-texte);cursor:pointer}
+.filtre[aria-pressed="true"]{background:#fff;color:var(--nuit);border-color:#fff}
+.compte{margin:18px 0 16px}
+.bloc-sombre{background:var(--nuit-2);border:1px solid var(--trait-sombre);border-radius:var(--r);padding:24px}
+.bloc-sombre h2{font-size:1.8rem}
+
+/* Fiche vidéo */
+.lecteur{position:relative;aspect-ratio:16/9;background:#000;border-radius:4px;overflow:hidden}
+.lecteur>img{width:100%;height:100%;object-fit:cover;opacity:.4}
+.consentement{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px 28px;gap:12px}
+.consentement p{max-width:44ch;font-size:.92rem;color:#fff;margin:0}
+.consentement a{color:#fff;font-size:.85rem}
+.lecteur-proto{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#000;color:#fff;font-family:var(--f-mono);text-align:center;padding:20px}
+.lecteur-proto small{color:var(--brume)}
+.fiche-grille{display:grid;gap:32px;margin-top:26px}
+.etiquettes-ligne{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.fiche h1{font-size:clamp(2.1rem,5.5vw,3.4rem)}
+.contexte{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.contexte li{background:var(--nuit-2);border:1px solid var(--trait-sombre);border-radius:var(--r);padding:14px 16px}
+.contexte li p{margin:0;color:#E3E8F0}
+.credits{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.credit{display:flex;flex-direction:column;align-items:flex-start}
+.credit-role{background:var(--nuit-3);color:var(--or);font-family:var(--f-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.3em .6em}
+.credit-nom{background:#fff;color:var(--nuit);font-family:var(--f-titre);font-weight:700;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;padding:.12em .6em;border-left:5px solid var(--or)}
+
+/* Réalisations */
+.cas{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--r);padding:26px}
+.cas-tete{max-width:760px;margin-bottom:22px}
+.cas-tete .etiquettes-ligne{margin-bottom:12px}
+.cas-temps{display:grid;gap:16px}
+.cas-bloc{border-top:5px solid var(--bleu);background:var(--papier);padding:18px;border-radius:0 0 var(--r) var(--r)}
+.cas-bloc:nth-child(2){border-top-color:var(--or)}
+.cas-bloc:nth-child(3){border-top-color:var(--nuit)}
+.cas-bloc dl{margin:0}
+.cas-bloc dt{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ardoise)}
+.cas-bloc dd{margin:0 0 .8em}
+.competences{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0 0}
+
+/* Admission */
+.etapes{counter-reset:e;list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.etapes li{counter-increment:e;background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--r);padding:18px 18px 18px 70px;position:relative}
+.etapes li::before{content:counter(e,decimal-leading-zero);position:absolute;left:18px;top:16px;font-family:var(--f-mono);font-weight:600;font-size:1.35rem;color:var(--bleu)}
+.etapes h3{font-size:1.35rem;margin-bottom:.25em}
+.etapes p{margin:0}
+
+/* Formulaires */
+.formulaire{display:grid;gap:16px;max-width:640px}
+.champ label,.champ legend{display:block;font-weight:600;margin-bottom:.35em}
+.champ .aide{font-size:.86rem;color:var(--ardoise);margin-top:.3em}
+input,select,textarea{width:100%;font:inherit;font-size:1rem;padding:.72em .85em;border:1.5px solid #8A93A3;border-radius:var(--r);background:#fff;color:var(--encre)}
+textarea{min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--bleu);outline-offset:1px;border-color:var(--bleu)}
+.mention-rgpd{font-size:.86rem;color:var(--ardoise);margin:0}
+.retour-form{font-weight:600;color:var(--bleu);margin:0}
+.retour-form:empty{display:none}
+
+/* Équipe, actualités */
+.personnes{display:grid;gap:14px;list-style:none;padding:0;margin:0}
+.personne{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--r);padding:18px;display:flex;gap:16px;align-items:center}
+.personne h3{margin:0 0 .2em;font-size:1.35rem}
+.personne p{margin:0;font-size:.95rem;color:var(--ardoise)}
+.avatar{width:60px;height:60px;border-radius:50%;background:var(--bleu);color:#fff;display:grid;place-items:center;font-family:var(--f-titre);font-weight:700;font-size:1.5rem;flex:none}
+.avatar-vide{background:transparent;border:2px dashed var(--ardoise);color:var(--ardoise)}
+.actus{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.actu{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--r);padding:20px}
+.actu h3{margin:.45em 0 .3em}
+.actu p{margin:0}
+
+/* Pied de page */
+.site-footer{background:var(--nuit);color:var(--brume);padding:48px 0 26px;font-size:.95rem}
+.pied-grille{display:grid;gap:28px}
+.site-footer h2{font-family:var(--f-mono);font-size:.75rem;color:#fff;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin:0 0 1em}
+.site-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.5em}
+.site-footer a{color:var(--brume);text-decoration:none}
+.site-footer a:hover{color:#fff;text-decoration:underline}
+.pied-marque .marque-nom{color:#fff;margin-bottom:.6em}
+.pied-bas{border-top:1px solid var(--trait-sombre);margin-top:36px;padding-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.05em}
+
+/* Apparitions discrètes */
+.anim .apparait{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.anim .apparait.vu{opacity:1;transform:none}
+
+@media (min-width:720px){
+  :root{--gouttiere:28px}
+  .section{padding:72px 0}
+  .temps-grille{grid-template-columns:repeat(3,1fr)}
+  .grille-videos{grid-template-columns:repeat(2,1fr)}
+  .faits{grid-template-columns:repeat(3,1fr)}
+  .deux{grid-template-columns:1fr 1fr;gap:32px}
+  .frise{grid-template-columns:1fr 1fr}
+  .cas-temps{grid-template-columns:repeat(3,1fr)}
+  .personnes{grid-template-columns:repeat(2,1fr)}
+  .actus{grid-template-columns:repeat(2,1fr)}
+  .pied-grille{grid-template-columns:1.6fr 1fr 1fr 1fr}
+  .filtres-titre{width:auto}
+  .legende-etiquettes p{align-items:center}
+}
+@media (min-width:1024px){
+  .utilitaire{display:block;background:#08111E;border-bottom:1px solid #16243A}
+  .utilitaire ul{list-style:none;margin:0;padding:6px 0;display:flex;justify-content:flex-end;gap:22px}
+  .utilitaire a{color:var(--brume);text-decoration:none;font-size:.82rem}
+  .utilitaire a:hover,.utilitaire a[aria-current="page"]{color:#fff;text-decoration:underline}
+  .menu-bouton{display:none}
+  .nav-principale,.nav-principale.ouvert{display:block;position:static;padding:0;background:none;border:0;box-shadow:none}
+  .nav-principale ul{display:flex;gap:2px}
+  .nav-principale a{font-size:1.18rem;padding:.45em .75em;border:0;border-radius:4px}
+  .nav-principale a:hover{background:rgba(255,255,255,.06)}
+  .nav-principale a[aria-current="page"]{color:#fff;box-shadow:inset 0 -3px 0 var(--or)}
+  .nav-secondaire{display:none!important}
+  .entete-ligne{min-height:72px;gap:14px}
+  .hero{padding:56px 0 72px}
+  .hero-grille{grid-template-columns:5fr 6fr;align-items:center;gap:48px}
+  .entete-grille{grid-template-columns:6fr 4fr;gap:48px}
+  .grille-videos{grid-template-columns:repeat(3,1fr)}
+  .fiche-grille{grid-template-columns:2fr 1fr;gap:48px}
+  .personnes{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .anim .apparait{opacity:1;transform:none}
+}
+
+/* Pages d'information (mentions, données, cookies, accessibilité, plan) */
+.texte-legal>*{max-width:72ch}
+.texte-legal h2{font-size:1.7rem;margin:1.9em 0 .5em}
+.texte-legal h2:first-child{margin-top:0}
+.texte-legal ul{padding-left:1.2em;margin:0 0 1em}
+.texte-legal li{margin-bottom:.45em}
+.texte-legal li::marker{color:var(--or-fonce)}
+.texte-legal dl{margin:0 0 1em;display:grid;gap:.9em}
+.texte-legal dt{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ardoise)}
+.texte-legal dd{margin:.15em 0 0}
+.plan-site{list-style:none;padding:0!important}
+.plan-site>li{margin-bottom:1.1em}
+.plan-site ul{margin:.4em 0 0}
+.obl{font-weight:400;color:var(--ardoise);font-size:.88em}
+[aria-invalid="true"]{border-color:var(--rouge)!important;box-shadow:0 0 0 1px var(--rouge)}
+.retour-form.erreur{color:#9B0E18}
+.btn-inactif{opacity:.8;cursor:not-allowed}
+.consentement a{display:inline-block;padding:.45em .3em}
+</style>
+</head>
+<body>
+<a class="lien-evitement" href="#main">Aller au contenu</a>
+<div class="barre-proto">
+  <p><strong>Prototype de travail</strong> · contenus provisoires · « Exemple » et « à compléter » ne sont pas réels · photos d’étudiants retirées de cette version en ligne</p>
+  <p class="proto-choix" role="group" aria-label="Variante du bandeau d’annonce"><span>Bandeau :</span><button type="button" data-mode="parcoursup" aria-pressed="true">Parcoursup</button><button type="button" data-mode="jpo" aria-pressed="false">Portes ouvertes</button><button type="button" data-mode="direct" aria-pressed="false">En direct</button><button type="button" data-mode="nouveau" aria-pressed="false">Nouveauté</button><button type="button" data-mode="etablissement" aria-pressed="false">Établissement</button></p>
+</div>
+
+<aside class="bandeau bandeau-parcoursup" id="bandeau" aria-label="Annonce">
+  <div class="wrap bandeau-ligne">
+    <span class="bandeau-contenu" style="display:contents"><span class="bandeau-puce">Parcoursup</span><p class="bandeau-texte">Candidater en BTS Communication : tout se passe sur Parcoursup.</p><a class="bandeau-lien" href="#/admission">Les étapes</a></span>
+    <button class="bandeau-fermer" type="button" aria-label="Fermer l’annonce">×</button>
+  </div>
+</aside>
+
+<header class="site-header">
+  <div class="utilitaire">
+    <ul class="wrap">
+      <li><a href="#/entreprises" data-lien="entreprises">Entreprises et partenaires</a></li>
+      <li><a href="#/equipe" data-lien="equipe">L’équipe</a></li>
+      <li><a href="#/actualites" data-lien="actualites">Actualités</a></li>
+      <li><a href="#/page">Site de l’établissement</a></li>
+    </ul>
+  </div>
+  <div class="wrap entete-ligne">
+    <a class="marque" href="#/" aria-label="BTS Communication, La Persévérance : accueil">
+      <span class="marque-nom">BTS COM</span>
+      <span class="marque-sous">La Persévérance<span class="sous-lieu"> · Guadeloupe</span></span>
+    </a>
+    <nav id="nav" class="nav-principale" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#/formation" data-lien="formation">La formation</a></li>
+        <li><a href="#/webtv" data-lien="webtv">Web TV</a></li>
+        <li><a href="#/realisations" data-lien="realisations">Réalisations</a></li>
+        <li><a href="#/admission" data-lien="admission">Admission</a></li>
+        <li><a href="#/contact" data-lien="contact">Contact</a></li>
+      </ul>
+      <ul class="nav-secondaire">
+        <li><a href="#/entreprises" data-lien="entreprises">Entreprises et partenaires</a></li>
+        <li><a href="#/equipe" data-lien="equipe">L’équipe</a></li>
+        <li><a href="#/actualites" data-lien="actualites">Actualités</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-or btn-petit" href="#/admission">Candidater</a>
+    <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="nav"><span class="barres" aria-hidden="true"></span>Menu</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ ACCUEIL ============ -->
+<section data-page="accueil" data-titre="">
+  <div class="sombre hero">
+    <div class="wrap hero-grille">
+      <div>
+        <p class="eyebrow">BTS Communication · Coloration JRI</p>
+        <h1>Apprendre la communication <span>en la pratiquant.</span></h1>
+        <p class="lead">Chaque étudiant mène une commande de bout en bout : la cadrer, la tourner, la diffuser, puis en mesurer l’écho, dans un média d’établissement qui sert aussi de vitrine à la formation.</p>
+        <div class="actions">
+          <a class="btn btn-or" href="#/admission">Candidater sur Parcoursup</a>
+          <a class="btn btn-contour" href="#/webtv">Voir la Web TV</a>
+        </div>
+        <p class="statut">Projet de coloration porté par l’équipe pédagogique, soumis à la validation de la direction et à l’avis de l’inspection.</p>
+      </div>
+      <figure class="ecran">
+        <div class="photo-a-venir" role="img" aria-label="Emplacement de photo : tournage sur plateau"><span>Photo à venir<br>tournage sur plateau</span></div>
+        <span class="viseur" aria-hidden="true"></span>
+        <span class="rec" aria-hidden="true"><span class="rec-point"></span>REC <span data-timecode>00:00:00</span></span>
+        <button class="ecran-pause" type="button" data-pause>Pause</button>
+        <figcaption class="synthe"><span class="synthe-titre">BTS Communication</span><span class="synthe-sous">à coloration journaliste reporter d’images</span></figcaption>
+      </figure>
+    </div>
+    <div class="wrap"><p class="note-proto">La vidéo d’ouverture de 10 à 15 secondes, muette et en boucle, prendra la place de cet emplacement. Le bouton Pause la contrôlera.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="section-titre apparait">
+        <div><p class="eyebrow">La méthode</p><h2>Trois temps, trois postures</h2></div>
+        <p>Chaque production est un cycle complet. L’étudiant y occupe tour à tour trois rôles professionnels.</p>
+      </div>
+      <ol class="temps-grille">
+        <li class="temps apparait">
+          <p class="tc-label"><b>01</b> Commande</p>
+          <h3>Chargé de communication côté annonceur</h3>
+          <p>Brief, analyse de la demande, cible, objectifs, ressources et indicateurs.</p>
+          <span class="puce-bloc">Bloc 1 · Stratégie</span>
+        </li>
+        <li class="temps apparait">
+          <p class="tc-label"><b>02</b> Terrain</p>
+          <h3>Reporter, réalisateur, monteur</h3>
+          <p>Écriture, tournage, régie mobile, montage, sous-titrage, diffusion.</p>
+          <span class="puce-bloc">Bloc 2 · Création et production</span>
+        </li>
+        <li class="temps apparait">
+          <p class="tc-label"><b>03</b> Écho</p>
+          <h3>Chargé de régie et de conseil</h3>
+          <p>Mesure de l’audience, retours, recommandation, argumentaire auprès d’un partenaire.</p>
+          <span class="puce-bloc">Bloc 3 · Media et digital</span>
+        </li>
+      </ol>
+      <a class="btn btn-contour fleche" href="#/coloration">Découvrir la coloration</a>
+    </div>
+  </div>
+
+  <div class="sombre section">
+    <div class="wrap">
+      <div class="section-titre apparait">
+        <div><p class="eyebrow">Web TV <span class="ac">nom à choisir</span></p><h2>Les dernières vidéos</h2></div>
+        <p>Reportages, interviews, plateaux et formats courts réalisés par les étudiants. Chaque contenu est signalé « Éditorial » ou « Commandé ».</p>
+      </div>
+      <ul class="grille-videos">
+        <li class="apparait"><a class="carte-video" href="#/video">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Coulisses · Format court</span><h3>Premier test de la régie mobile</h3></span>
+        </a></li>
+        <li class="apparait"><a class="carte-video" href="#/video">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Série · Format court</span><h3>Une journée en BTS Communication</h3></span>
+        </a></li>
+        <li class="apparait"><a class="carte-video" href="#/video">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-commande">Commandé</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Reportage · Pour un commanditaire</span><h3>Reportage réalisé pour une association locale</h3></span>
+        </a></li>
+      </ul>
+      <div class="actions"><a class="btn btn-contour fleche" href="#/webtv">Toute la Web TV</a></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap deux">
+      <div class="apparait">
+        <p class="eyebrow">Ce que vous apprenez</p>
+        <h2>Des compétences que l’on peut prouver</h2>
+        <ol class="frise" style="grid-template-columns:1fr">
+          <li><span class="num">01</span><div><strong>Analyser une demande</strong><p>Reformuler une commande, définir la cible, les objectifs et les indicateurs.</p></div></li>
+          <li><span class="num">02</span><div><strong>Produire et diffuser</strong><p>Écrire, tourner, monter, sous-titrer et publier pour un public réel.</p></div></li>
+          <li><span class="num">03</span><div><strong>Mesurer et conseiller</strong><p>Analyser l’audience et les retours, recommander au commanditaire.</p></div></li>
+          <li><span class="num">04</span><div><strong>Garder des preuves</strong><p>Chaque production nourrit votre portfolio et vos dossiers d’examen.</p></div></li>
+        </ol>
+      </div>
+      <div class="apparait">
+        <p class="eyebrow">Vos questions</p>
+        <h2>Avant de candidater</h2>
+        <details class="faq"><summary>Est-ce une formation de journaliste ?</summary><div class="rep"><p>Non. C’est un BTS Communication. Le métier de journaliste reporter d’images sert de cadre de pratique ; le diplôme et ses épreuves ne changent pas.</p></div></details>
+        <details class="faq"><summary>Faut-il déjà savoir filmer ?</summary><div class="rep"><p>Non, aucun prérequis audiovisuel. On attend les bases de la communication, l’usage courant du numérique et le goût du travail en équipe.</p></div></details>
+        <details class="faq"><summary>Dois-je apparaître à l’image ?</summary><div class="rep"><p>Non. Écriture, régie, montage, mesure : les rôles de coulisse comptent autant dans l’évaluation.</p></div></details>
+        <div class="actions"><a class="btn btn-contour fleche" href="#/admission">Toutes les questions</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-blanche">
+    <div class="wrap deux">
+      <div class="carte-info apparait">
+        <p class="eyebrow">Journée portes ouvertes</p>
+        <h2>Venez voir la formation de près</h2>
+        <p>Prochaine date : <span class="ac">à compléter</span></p>
+        <p>Les étudiants pourraient y tourner un « BTS en direct ». <span class="en-projet">En projet</span></p>
+        <a class="btn btn-or" href="#/actualites">Voir l’agenda</a>
+      </div>
+      <div class="carte-info carte-bleue apparait">
+        <p class="eyebrow">Entreprises et partenaires</p>
+        <h2>Confiez une commande à nos étudiants</h2>
+        <p>Associations, collectivités, annonceurs : votre besoin devient une situation professionnelle réelle, menée de la commande à la mesure des résultats.</p>
+        <a class="btn btn-contour fleche" href="#/entreprises">Proposer une commande</a>
+      </div>
+    </div>
+  </div>
+
+  <figure class="etablissement">
+    <img src="batiment.jpg" alt="La cour de l’établissement et sa grande fresque murale « Cité scolaire La Persévérance ».">
+    <figcaption><div class="wrap">La Persévérance <span class="ac">présentation à valider : statut et commune</span></div></figcaption>
+  </figure>
+</section>
+
+<!-- ============ LA FORMATION ============ -->
+<section data-page="formation" data-titre="La formation" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / La formation</p>
+      <h1>Le BTS Communication</h1>
+      <p class="lead">Un diplôme de niveau bac + 2 qui forme des professionnels capables d’analyser la demande d’un annonceur, de concevoir des solutions de communication, de les produire, de les diffuser et d’en mesurer les effets.</p>
+      <ul class="sous-nav">
+        <li><a href="#/formation">Le BTS en bref</a></li>
+        <li><a href="#/coloration">La coloration JRI</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <h2 class="apparait">En bref</h2>
+      <dl class="faits apparait">
+        <div class="fait"><dt>Diplôme</dt><dd>BTS Communication</dd></div>
+        <div class="fait"><dt>Référentiel</dt><dd>2022</dd></div>
+        <div class="fait"><dt>Durée</dt><dd>2 ans</dd></div>
+        <div class="fait"><dt>Stages</dt><dd>14 semaines</dd></div>
+        <div class="fait"><dt>Accès</dt><dd>Parcoursup</dd></div>
+        <div class="fait"><dt>Coloration</dt><dd>Journaliste reporter d’images <span class="en-projet">En projet</span></dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="section section-blanche">
+    <div class="wrap">
+      <div class="section-titre apparait">
+        <div><p class="eyebrow">Programme</p><h2>Trois blocs de compétences</h2></div>
+        <p>Le référentiel organise la formation autour de trois blocs, complétés par des enseignements généraux et un atelier de professionnalisation.</p>
+      </div>
+      <ol class="temps-grille">
+        <li class="temps apparait"><p class="tc-label"><b>B1</b> Bloc 1</p><h3>Stratégie du commanditaire</h3><p>Prendre en charge la demande de l’annonceur, élaborer le plan de communication dans un environnement digitalisé, puis le piloter.</p></li>
+        <li class="temps apparait"><p class="tc-label"><b>B2</b> Bloc 2</p><h3>Conception et mise en œuvre</h3><p>Veille créative et technologique, création de contenus, production et diffusion, achat de prestations, contrôle et évaluation.</p></li>
+        <li class="temps apparait"><p class="tc-label"><b>B3</b> Bloc 3</p><h3>Solutions media et digitales</h3><p>Veille de l’écosystème, offre media innovante, accompagnement des équipes commerciales, conseil aux annonceurs.</p></li>
+      </ol>
+      <h3>Enseignements associés</h3>
+      <ul class="liste-puces">
+        <li>Cultures de la communication</li>
+        <li>Culture économique, juridique et managériale</li>
+        <li>Langue vivante</li>
+        <li>Atelier de professionnalisation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap deux">
+      <div class="apparait">
+        <p class="eyebrow">Stages</p>
+        <h2>14 semaines en milieu professionnel</h2>
+        <p>Réparties sur les deux années. Le guide d’accompagnement du diplôme recommande un stage chez un annonceur et un stage chez un prestataire.</p>
+        <p>Un stage dans une organisation qui produit des contenus audiovisuels est envisagé avec la coloration. <span class="en-projet">En projet</span></p>
+        <p class="eyebrow" style="margin-top:2.4em">Après le BTS</p>
+        <h2>Métiers et poursuites d’études</h2>
+        <ul class="liste-puces">
+          <li>Chargé de communication généraliste, digital ou commercial.</li>
+          <li>Chez un annonceur, en agence, dans un média ou comme prestataire indépendant.</li>
+          <li>Avec la coloration, un savoir-faire en production audiovisuelle et en diffusion numérique.</li>
+          <li>Poursuite d’études possible, par exemple vers le titre de journaliste reporter d’images plurimédia : le BTS donne le niveau requis pour s’y présenter, avec tests et entretien, sans équivalence ni dispense.</li>
+        </ul>
+        <p>Témoignages d’anciens étudiants : <span class="ac">à recueillir</span></p>
+      </div>
+      <figure class="photo-cadree apparait">
+        <div class="photo-a-venir photo-a-venir-portrait" role="img" aria-label="Emplacement de photo : remise des diplômes"><span>Photo à venir<br>remise des diplômes</span></div>
+        <span class="viseur" aria-hidden="true"></span>
+        <figcaption>Publiée avec l’accord des personnes photographiées</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA COLORATION ============ -->
+<section data-page="coloration" data-titre="La coloration JRI" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap entete-grille">
+      <div>
+        <p class="fil"><a href="#/">Accueil</a> / <a href="#/formation">La formation</a> / La coloration</p>
+        <h1>La coloration journaliste reporter d’images</h1>
+        <p class="lead">Le métier de JRI devient le cadre de pratique du BTS : rechercher et vérifier l’information, préparer un sujet, recueillir une parole, tourner, réaliser en régie mobile, monter et diffuser pour un public réel.</p>
+        <p class="statut">Projet porté par l’équipe pédagogique, soumis à la validation de la direction et à l’avis de l’inspection.</p>
+        <ul class="sous-nav">
+          <li><a href="#/formation">Le BTS en bref</a></li>
+          <li><a href="#/coloration">La coloration JRI</a></li>
+        </ul>
+      </div>
+      <figure class="ecran ecran-portrait">
+        <div class="photo-a-venir" role="img" aria-label="Emplacement de photo : régie mobile"><span>Photo à venir<br>régie mobile</span></div>
+        <span class="viseur" aria-hidden="true"></span>
+        <figcaption class="synthe"><span class="synthe-titre">Régie mobile</span><span class="synthe-sous">Temps 02 · Terrain</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap deux">
+      <div class="carte-info apparait">
+        <h2>Ce qu’elle est</h2>
+        <ul class="oui">
+          <li>Un cadre professionnel qui donne un fil conducteur aux situations d’apprentissage.</li>
+          <li>Une pratique inscrite dans le référentiel du BTS Communication.</li>
+          <li>Des productions réelles, diffusées sur la Web TV de l’établissement.</li>
+        </ul>
+      </div>
+      <div class="carte-info apparait">
+        <h2>Ce qu’elle n’est pas</h2>
+        <ul class="non">
+          <li>Une formation de journaliste.</li>
+          <li>Un nouveau diplôme : le BTS et ses épreuves ne changent pas.</li>
+          <li>Une préparation au titre de journaliste reporter d’images.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section sombre">
+    <div class="wrap">
+      <div class="section-titre apparait">
+        <div><p class="eyebrow">La méthode</p><h2>Commande · Terrain · Écho</h2></div>
+        <p>C’est ce qui relie un projet audiovisuel aux trois blocs du BTS, là où un simple atelier de reportage s’arrêterait au tournage.</p>
+      </div>
+      <ol class="contexte" style="gap:16px">
+        <li class="apparait"><p class="tc-label"><b>01</b> Commande · côté annonceur</p><p>Vous recevez ou rédigez le brief, analysez la demande, la cible, les contraintes et les objectifs, puis définissez le plan, les ressources et les indicateurs.</p></li>
+        <li class="apparait"><p class="tc-label"><b>02</b> Terrain · reporter, réalisateur, monteur</p><p>Vous recherchez, écrivez, tournez, réalisez en régie mobile, montez, habillez, sous-titrez et diffusez.</p></li>
+        <li class="apparait"><p class="tc-label"><b>03</b> Écho · régie et conseil</p><p>Vous mesurez l’audience, recueillez les retours, formulez une recommandation et argumentez auprès d’un partenaire.</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section section-blanche">
+    <div class="wrap">
+      <div class="section-titre apparait">
+        <div><p class="eyebrow">Le parcours proposé <span class="en-projet">En projet</span></p><h2>Douze semaines, huit séquences</h2></div>
+        <p>Chaque séquence associe un apport court, une démonstration, une mission de production et un retour critique. Le direct n’arrive qu’après répétition et validation.</p>
+      </div>
+      <ol class="frise">
+        <li><span class="num">01</span><div><strong>Brief et cadrage</strong><span class="meta">Commande · semaines 1 et 2</span><p>Analyse de la commande, cible, objectifs, contraintes, indicateurs.</p></div></li>
+        <li><span class="num">02</span><div><strong>Culture JRI</strong><span class="meta">Commande · semaines 1 et 2</span><p>Formats et rôles, déontologie, vérification des sources, droit et sécurité.</p></div></li>
+        <li><span class="num">03</span><div><strong>Écriture</strong><span class="meta">Commande · semaines 3 et 4</span><p>Angle, synopsis, conducteur, questions, repérage, plan de tournage.</p></div></li>
+        <li><span class="num">04</span><div><strong>Captation</strong><span class="meta">Terrain · semaines 5 à 9</span><p>Cadre, lumière, son, interview, plans de coupe, continuité.</p></div></li>
+        <li><span class="num">05</span><div><strong>Régie mobile</strong><span class="meta">Terrain · semaines 5 à 9</span><p>Installation, tests, réalisation multicaméra, habillage, enregistrement, direct.</p></div></li>
+        <li><span class="num">06</span><div><strong>Postproduction</strong><span class="meta">Terrain · semaines 7 à 9</span><p>Dérushage, montage, mixage, titrage, sous-titrage, contrôle qualité.</p></div></li>
+        <li><span class="num">07</span><div><strong>Diffusion</strong><span class="meta">Écho · semaines 10 et 11</span><p>Métadonnées, vignette, publication, modération, déclinaisons sociales.</p></div></li>
+        <li><span class="num">08</span><div><strong>Bilan</strong><span class="meta">Écho · semaine 12</span><p>Audience, retours, écarts, recommandation au commanditaire.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap deux">
+      <div class="apparait">
+        <h2>Les règles du jeu</h2>
+        <ul class="oui">
+          <li>Aucun prérequis audiovisuel.</li>
+          <li>Personne n’est obligé d’apparaître à l’image : écriture, régie, montage et mesure comptent autant.</li>
+          <li>Des rôles qui tournent, une évaluation qui reste individuelle.</li>
+          <li>Contenus sous-titrés, matériel prêté, tâches aménagées pour les étudiants en situation de handicap.</li>
+          <li>Une autorisation écrite de chaque personne filmée.</li>
+          <li>Un « bon à tourner » et un « bon à diffuser » donnés par un référent éditorial.</li>
+        </ul>
+      </div>
+      <div class="apparait">
+        <h2>Les moyens prévus <span class="en-projet">En projet</span></h2>
+        <ul class="liste-puces">
+          <li>Une régie vidéo mobile à trois caméras pilotées à distance.</li>
+          <li>Une régie audio avec micros sans fil.</li>
+          <li>Une régie lumière pour le plateau.</li>
+          <li>Une station de montage.</li>
+        </ul>
+        <p class="note-proto">Le matériel sera montré en vraies photos une fois l’équipement en place, jamais avec des images de synthèse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEB TV ============ -->
+<section data-page="webtv" data-titre="Web TV" class="page-sombre" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Web TV</p>
+      <h1>Web TV <span class="ac">nom à choisir</span></h1>
+      <p class="lead">Les reportages, interviews, plateaux et formats courts réalisés par les étudiants du BTS Communication.</p>
+      <div class="legende-etiquettes">
+        <p><span class="etiquette etiquette-editorial">Éditorial</span> Sujet choisi et traité par les étudiants, sous responsabilité éditoriale.</p>
+        <p><span class="etiquette etiquette-commande">Commandé</span> Réalisé pour un partenaire ou un commanditaire, et signé comme tel.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sombre">
+    <div class="wrap">
+      <div class="filtres" role="group" aria-labelledby="f-format">
+        <span class="filtres-titre" id="f-format">Format</span>
+        <button class="filtre" type="button" data-groupe="format" data-filtre="tout" aria-pressed="true">Tout</button>
+        <button class="filtre" type="button" data-groupe="format" data-filtre="reportage" aria-pressed="false">Reportage</button>
+        <button class="filtre" type="button" data-groupe="format" data-filtre="interview" aria-pressed="false">Interview</button>
+        <button class="filtre" type="button" data-groupe="format" data-filtre="plateau" aria-pressed="false">Plateau</button>
+        <button class="filtre" type="button" data-groupe="format" data-filtre="court" aria-pressed="false">Format court</button>
+      </div>
+      <div class="filtres" role="group" aria-labelledby="f-etiquette">
+        <span class="filtres-titre" id="f-etiquette">Étiquette</span>
+        <button class="filtre" type="button" data-groupe="etiquette" data-filtre="tout" aria-pressed="true">Tout</button>
+        <button class="filtre" type="button" data-groupe="etiquette" data-filtre="editorial" aria-pressed="false">Éditorial</button>
+        <button class="filtre" type="button" data-groupe="etiquette" data-filtre="commande" aria-pressed="false">Commandé</button>
+      </div>
+      <p class="meta compte" id="compte-videos" aria-live="polite">6 vidéos · exemples</p>
+      <ul class="grille-videos" id="grille-webtv">
+        <li><a class="carte-video" href="#/video" data-format="court" data-etiquette="editorial">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Coulisses · Format court</span><h3>Premier test de la régie mobile</h3></span></a></li>
+        <li><a class="carte-video" href="#/video" data-format="court" data-etiquette="editorial">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Série · Format court</span><h3>Une journée en BTS Communication</h3></span></a></li>
+        <li><a class="carte-video" href="#/video" data-format="plateau" data-etiquette="editorial">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Plateau</span><h3>La coloration racontée par ses étudiants</h3></span></a></li>
+        <li><a class="carte-video" href="#/video" data-format="reportage" data-etiquette="commande">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-commande">Commandé</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Reportage · Pour un commanditaire</span><h3>Reportage réalisé pour une association locale</h3></span></a></li>
+        <li><a class="carte-video" href="#/video" data-format="interview" data-etiquette="editorial">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Interview</span><h3>Rencontre avec un professionnel de l’image</h3></span></a></li>
+        <li><a class="carte-video" href="#/video" data-format="court" data-etiquette="commande">
+          <span class="vignette vignette-vide">Vignette à venir<span class="etiquettes"><span class="etiquette etiquette-commande">Commandé</span><span class="etiquette etiquette-exemple">Exemple</span></span><span class="lecture" aria-hidden="true"></span></span>
+          <span class="carte-corps"><span class="meta">Format court · Commande de l’établissement</span><h3>Capsule pour la journée portes ouvertes</h3></span></a></li>
+      </ul>
+      <div class="deux" style="margin-top:48px">
+        <div class="bloc-sombre">
+          <p class="eyebrow">Séries</p>
+          <h2>Pour démarrer avant les premières productions</h2>
+          <ul class="liste-puces">
+            <li><strong>Coulisses</strong> : préparation, tournage, régie, carnet de bord.</li>
+            <li><strong>Une journée en BTS Communication</strong> : capsules pour les futurs candidats.</li>
+          </ul>
+        </div>
+        <div class="bloc-sombre">
+          <p class="eyebrow">Charte éditoriale</p>
+          <h2>Qui publie, et comment</h2>
+          <p>Chaque contenu est validé avant diffusion, porte son étiquette, ses crédits et son contexte pédagogique.</p>
+          <p>Responsable de la publication : <span class="ac">à désigner</span></p>
+        </div>
+      </div>
+      <p class="note-proto">La structure prévoit une rubrique Podcasts. Elle reste masquée tant qu’aucun épisode n’est publié.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FICHE VIDÉO ============ -->
+<section data-page="video" data-titre="Premier test de la régie mobile" class="page-sombre" hidden>
+  <div class="sombre">
+    <div class="wrap fiche" style="padding-top:32px">
+      <p class="fil"><a href="#/">Accueil</a> / <a href="#/webtv">Web TV</a> / Coulisses</p>
+      <div class="lecteur">
+                <div class="consentement">
+          <p>Cette vidéo est hébergée sur YouTube. En la lançant, vous acceptez que YouTube dépose des cookies.</p>
+          <button class="btn btn-or" type="button" data-consentement>Lancer la vidéo</button>
+          <a href="#/cookies">En savoir plus sur les cookies</a>
+        </div>
+      </div>
+      <div class="fiche-grille">
+        <div>
+          <div class="etiquettes-ligne"><span class="etiquette etiquette-editorial">Éditorial</span><span class="etiquette etiquette-exemple">Exemple</span><span class="meta">Coulisses · Format court · Sous-titré</span></div>
+          <h1>Premier test de la régie mobile</h1>
+          <p class="lead">Exemple de fiche : l’équipe installe la régie, teste les caméras et le son, puis répète avant la première émission.</p>
+          <h2 class="h-petit">Contexte pédagogique</h2>
+          <ol class="contexte">
+            <li><p class="tc-label"><b>01</b> Commande</p><p>Commande interne : montrer les coulisses de la formation aux futurs candidats.</p></li>
+            <li><p class="tc-label"><b>02</b> Terrain</p><p>Installation, câblage, test technique documenté, capsule de 60 à 90 secondes.</p></li>
+            <li><p class="tc-label"><b>03</b> Écho</p><p>Audience et retours mesurés après publication, recommandation pour la suite.</p></li>
+          </ol>
+          <details class="faq" style="margin-top:20px"><summary>Transcription</summary><div class="rep"><p>La transcription complète de la vidéo s’affiche ici, pour les personnes sourdes ou malentendantes et pour une lecture rapide.</p></div></details>
+        </div>
+        <aside aria-labelledby="t-credits">
+          <h2 class="h-petit" id="t-credits" style="margin-top:0">Crédits</h2>
+          <ul class="credits">
+            <li class="credit"><span class="credit-role">Réalisation</span><span class="credit-nom">Prénom Nom</span></li>
+            <li class="credit"><span class="credit-role">Cadre</span><span class="credit-nom">Prénom Nom</span></li>
+            <li class="credit"><span class="credit-role">Son</span><span class="credit-nom">Prénom Nom</span></li>
+            <li class="credit"><span class="credit-role">Montage</span><span class="credit-nom">Prénom Nom</span></li>
+            <li class="credit"><span class="credit-role">Rédaction</span><span class="credit-nom">Prénom Nom</span></li>
+          </ul>
+          <p class="note-proto">Dans l’administration, chaque vidéo porte la date de fin des autorisations de droit à l’image. Une alerte prévient avant l’échéance.</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RÉALISATIONS ============ -->
+<section data-page="realisations" data-titre="Réalisations" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Réalisations</p>
+      <h1>Réalisations</h1>
+      <p class="lead">Chaque réalisation suit les trois temps de la méthode. Elle montre ce que les étudiants savent faire, du brief jusqu’aux résultats.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <article class="cas apparait">
+        <div class="cas-tete">
+          <div class="etiquettes-ligne"><span class="etiquette etiquette-exemple">Exemple</span><span class="en-projet">En projet</span></div>
+          <h2>La communication du BTS, première commande</h2>
+          <p>Le projet propose que la première commande confiée aux étudiants soit la communication de leur propre formation.</p>
+        </div>
+        <div class="cas-temps">
+          <div class="cas-bloc">
+            <p class="tc-label"><b>01</b> Commande</p>
+            <dl><dt>Commanditaire</dt><dd>La direction de l’établissement</dd><dt>Cibles</dt><dd>Lycéens, candidats Parcoursup, familles</dd><dt>Objectif</dt><dd>Faire connaître la formation et sa coloration</dd></dl>
+          </div>
+          <div class="cas-bloc">
+            <p class="tc-label"><b>02</b> Terrain</p>
+            <dl><dt>Productions</dt><dd>Portraits d’étudiants, visite de la formation, direct en journée portes ouvertes, contenus de ce site</dd><dt>Rôles</dt><dd>Réalisation, cadre, son, montage, rédaction, en rotation</dd></dl>
+          </div>
+          <div class="cas-bloc">
+            <p class="tc-label"><b>03</b> Écho</p>
+            <dl><dt>Indicateurs</dt><dd>Audience de la Web TV, fréquentation des journées portes ouvertes, vœux Parcoursup</dd><dt>Résultats</dt><dd><span class="ac">à mesurer</span></dd></dl>
+          </div>
+        </div>
+        <p class="competences"><span class="meta">Compétences mobilisées</span><span class="puce-bloc">Bloc 1</span><span class="puce-bloc">Bloc 2</span><span class="puce-bloc">Bloc 3</span></p>
+      </article>
+      <p class="note-proto">Les études de cas s’ajoutent depuis l’administration, au fil des commandes réelles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADMISSION ============ -->
+<section data-page="admission" data-titre="Admission" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Admission</p>
+      <h1>Admission</h1>
+      <p class="lead">L’entrée en BTS Communication se fait sur Parcoursup. Aucun prérequis audiovisuel n’est demandé.</p>
+      <div class="actions"><span class="btn btn-or btn-inactif">Fiche Parcoursup de la formation</span><span class="ac">lien à compléter</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap deux">
+      <div class="apparait">
+        <h2>Les étapes</h2>
+        <ol class="etapes">
+          <li><h3>S’informer</h3><p>Parcourez ce site et la Web TV, venez à une journée portes ouvertes.</p></li>
+          <li><h3>Formuler un vœu sur Parcoursup</h3><p>Recherchez le BTS Communication de La Persévérance sur la plateforme.</p></li>
+          <li><h3>Suivre le calendrier officiel</h3><p>Les dates de la procédure sont publiées chaque année sur le site de Parcoursup.</p></li>
+          <li><h3>Préparer la rentrée</h3><p>Inscription et frais de scolarité : <span class="ac">à compléter</span></p></li>
+        </ol>
+      </div>
+      <div class="apparait">
+        <h2>Le profil attendu</h2>
+        <ul class="oui">
+          <li>Les bases de la communication.</li>
+          <li>L’usage courant des outils numériques.</li>
+          <li>Le goût du travail en équipe.</li>
+        </ul>
+        <p>Filmer, monter, réaliser en régie : vous l’apprenez pendant la formation.</p>
+        <div class="carte-info" style="margin-top:24px">
+          <p class="eyebrow">Journée portes ouvertes</p>
+          <p style="margin:0">Prochaine date : <span class="ac">à compléter</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-blanche">
+    <div class="wrap">
+      <h2 class="apparait">Questions fréquentes</h2>
+      <div style="max-width:820px">
+        <details class="faq"><summary>Est-ce une formation de journaliste ?</summary><div class="rep"><p>Non. C’est un BTS Communication à coloration journaliste reporter d’images. Le métier de JRI sert de cadre de pratique ; le diplôme et ses épreuves ne changent pas.</p></div></details>
+        <details class="faq"><summary>Dois-je apparaître à l’image ?</summary><div class="rep"><p>Non. Écriture, régie, montage et mesure d’audience ont la même valeur dans l’évaluation.</p></div></details>
+        <details class="faq"><summary>Faut-il avoir son propre matériel ?</summary><div class="rep"><p>Non. Le matériel peut être prêté par l’établissement.</p></div></details>
+        <details class="faq"><summary>Comment les étudiants en situation de handicap sont-ils accompagnés ?</summary><div class="rep"><p>Les tâches sont aménagées, les contenus sous-titrés et le matériel peut être prêté. Contact du référent : <span class="ac">à compléter</span></p></div></details>
+        <details class="faq"><summary>Combien de semaines de stage ?</summary><div class="rep"><p>Quatorze semaines sur les deux ans, idéalement chez un annonceur et chez un prestataire.</p></div></details>
+        <details class="faq"><summary>Puis-je ensuite devenir journaliste reporter d’images ?</summary><div class="rep"><p>Le BTS donne le niveau requis pour se présenter à une formation de JRI plurimédia, avec tests et entretien. Il n’ouvre ni équivalence ni dispense.</p></div></details>
+      </div>
+      <div class="actions"><a class="btn btn-contour fleche" href="#/contact">Poser une autre question</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENTREPRISES ============ -->
+<section data-page="entreprises" data-titre="Entreprises et partenaires" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Entreprises et partenaires</p>
+      <h1>Entreprises et partenaires</h1>
+      <p class="lead">Associations, collectivités, annonceurs, médias : travaillez avec les étudiants du BTS Communication.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <ol class="temps-grille">
+        <li class="temps apparait"><p class="tc-label"><b>01</b> Commander</p><h3>Confier une commande</h3><p>Un reportage, un portrait, une captation : votre besoin devient une situation professionnelle réelle, du brief à la mesure des résultats.</p></li>
+        <li class="temps apparait"><p class="tc-label"><b>02</b> Accueillir</p><h3>Accueillir un stagiaire</h3><p>Quatorze semaines de stage sur deux ans, chez un annonceur, une agence, un média ou un prestataire.</p></li>
+        <li class="temps apparait"><p class="tc-label"><b>03</b> Transmettre</p><h3>Intervenir</h3><p>Animer un atelier, donner un retour professionnel, siéger dans un jury de restitution.</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="section section-blanche">
+    <div class="wrap deux">
+      <div>
+        <h2>Proposer une commande</h2>
+        <p>Décrivez votre besoin en quelques lignes. L’équipe pédagogique vous répond pour en vérifier la faisabilité.</p>
+        <p class="note-proto">Ce formulaire est déjà un exercice du temps Commande : les étudiants reformulent la demande en note de cadrage.</p>
+        <h2 style="margin-top:1.4em">Nos partenaires</h2>
+        <p>Les partenaires de la formation seront présentés ici après signature des conventions.</p>
+      </div>
+      <form class="formulaire" data-proto novalidate>
+        <div class="champ"><label for="e-org">Organisation</label><input id="e-org" name="organisation" autocomplete="organization"></div>
+        <div class="champ"><label for="e-nom">Nom et prénom <span class="obl">(obligatoire)</span></label><input id="e-nom" name="nom" autocomplete="name" required aria-required="true"></div>
+        <div class="champ"><label for="e-mail">Courriel <span class="obl">(obligatoire)</span></label><input id="e-mail" name="courriel" type="email" autocomplete="email" required aria-required="true"></div>
+        <div class="champ"><label for="e-besoin">Votre besoin <span class="obl">(obligatoire)</span></label><textarea id="e-besoin" name="besoin" aria-describedby="e-besoin-aide" required aria-required="true"></textarea><p class="aide" id="e-besoin-aide">Sujet, public visé, usage prévu de la production.</p></div>
+        <p class="mention-rgpd">Vos données servent uniquement à traiter votre demande. Durée de conservation : <span class="ac">à fixer</span>. <a href="#/donnees">Vos données et vos droits</a></p>
+        <div><button class="btn btn-or" type="submit">Envoyer la demande</button></div>
+        <p class="retour-form" role="status" tabindex="-1"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÉQUIPE ============ -->
+<section data-page="equipe" data-titre="L’équipe" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / L’équipe</p>
+      <h1>L’équipe</h1>
+      <p class="lead">Une équipe pluridisciplinaire porte le projet : enseignements professionnels, cultures de la communication, culture économique, juridique et managériale.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <h2 class="apparait">Les porteuses du projet</h2>
+      <ul class="personnes">
+        <li class="personne apparait"><span class="avatar avatar-vide" aria-hidden="true">?</span><div><h3>Porteuse du projet</h3><p>Nom et fonction : <span class="ac">à compléter</span></p></div></li>
+        <li class="personne apparait"><span class="avatar avatar-vide" aria-hidden="true">?</span><div><h3>Porteuse du projet</h3><p>Nom et fonction : <span class="ac">à compléter</span></p></div></li>
+        <li class="personne apparait"><span class="avatar avatar-vide" aria-hidden="true">?</span><div><h3>Porteuse du projet</h3><p>Nom et fonction : <span class="ac">à compléter</span></p></div></li>
+      </ul>
+      <h2 style="margin-top:56px" class="apparait">Les rôles du projet</h2>
+      <ul class="personnes">
+        <li class="personne apparait"><span class="avatar avatar-vide" aria-hidden="true">?</span><div><h3>Chef de projet</h3><p>Coordonne le calendrier, les moyens et les validations. <span class="ac">à désigner</span></p></div></li>
+        <li class="personne apparait"><span class="avatar avatar-vide" aria-hidden="true">?</span><div><h3>Référent éditorial</h3><p>Valide sujets, sources, droits et publication. <span class="ac">à désigner</span></p></div></li>
+        <li class="personne apparait"><span class="avatar avatar-vide" aria-hidden="true">?</span><div><h3>Référent technique</h3><p>Valide le matériel, la sécurité et tout direct. <span class="ac">à désigner</span></p></div></li>
+      </ul>
+      <p class="note-proto">Les photos de l’équipe seront des portraits sur fond neutre, publiés avec l’accord de chaque personne. Les professionnels intervenants apparaîtront une fois confirmés.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTUALITÉS ============ -->
+<section data-page="actualites" data-titre="Actualités" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Actualités</p>
+      <h1>Actualités et agenda</h1>
+      <p class="lead">Journées portes ouvertes, salons, tournages et diffusions.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <ul class="actus">
+        <li class="actu apparait"><div class="etiquettes-ligne"><span class="etiquette etiquette-exemple">Exemple</span><span class="meta">Agenda</span></div><h3>Journée portes ouvertes</h3><p>Date : <span class="ac">à compléter</span> · Rencontre avec l’équipe et les étudiants.</p></li>
+        <li class="actu apparait"><div class="etiquettes-ligne"><span class="etiquette etiquette-exemple">Exemple</span><span class="meta">Web TV</span></div><h3>Les coulisses de la formation en vidéo</h3><p>Premiers épisodes de la série « Coulisses ».</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section data-page="contact" data-titre="Contact" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Contact</p>
+      <h1>Contact</h1>
+      <p class="lead">Une question sur la formation, l’admission ou un partenariat ? Écrivez-nous.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap deux">
+      <form class="formulaire" data-proto novalidate>
+        <div class="champ"><label for="c-nom">Nom et prénom</label><input id="c-nom" name="nom" autocomplete="name"></div>
+        <div class="champ"><label for="c-mail">Courriel <span class="obl">(obligatoire)</span></label><input id="c-mail" name="courriel" type="email" autocomplete="email" required aria-required="true"></div>
+        <div class="champ"><label for="c-profil">Vous êtes</label>
+          <select id="c-profil" name="profil"><option>Lycéen ou candidat</option><option>Parent</option><option>Entreprise ou association</option><option>Autre</option></select></div>
+        <div class="champ"><label for="c-msg">Votre message <span class="obl">(obligatoire)</span></label><textarea id="c-msg" name="message" required aria-required="true"></textarea></div>
+        <p class="mention-rgpd">Vos données servent uniquement à vous répondre. Durée de conservation : <span class="ac">à fixer</span>. <a href="#/donnees">Vos données et vos droits</a></p>
+        <div><button class="btn btn-or" type="submit">Envoyer</button></div>
+        <p class="retour-form" role="status" tabindex="-1"></p>
+      </form>
+      <div>
+        <div class="carte-info">
+          <h2>Coordonnées</h2>
+          <p><strong>Adresse</strong><br><span class="ac">à compléter · commune à harmoniser</span></p>
+          <p><strong>Téléphone</strong><br><span class="ac">à compléter</span></p>
+          <p style="margin:0"><strong>Courriel</strong><br><span class="ac">à compléter</span></p>
+        </div>
+        <figure class="photo-cadree" style="margin-top:20px">
+          <img src="batiment.jpg" alt="La cour de l’établissement et sa fresque murale." style="aspect-ratio:16/7" loading="lazy">
+          <figcaption>Plan d’accès : image fixe et lien vers un service de cartes, sans carte intégrée</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SITE DE L’ÉTABLISSEMENT ============ -->
+<section data-page="page" data-titre="Site de l’établissement" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Site de l’établissement</p>
+      <h1>Site de l’établissement</h1>
+      <p class="lead">Ce lien conduira au site de La Persévérance. <span class="ac">adresse du site à compléter</span></p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <a class="btn btn-contour fleche" href="#/">Retour à l’accueil</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENTIONS LÉGALES ============ -->
+<section data-page="mentions" data-titre="Mentions légales" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Informations / Mentions légales</p>
+      <h1>Mentions légales</h1>
+      <p class="lead">Les informations que la loi demande de publier sur l’éditeur et l’hébergeur du site.</p>
+      <ul class="sous-nav">
+        <li><a href="#/mentions">Mentions légales</a></li>
+        <li><a href="#/donnees">Données personnelles</a></li>
+        <li><a href="#/cookies">Cookies</a></li>
+        <li><a href="#/accessibilite">Accessibilité</a></li>
+        <li><a href="#/plan">Plan du site</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap texte-legal">
+      <h2>Éditeur du site</h2>
+      <dl>
+        <div><dt>Éditeur</dt><dd><span class="ac">nom de l’établissement et statut, à compléter</span></dd></div>
+        <div><dt>Adresse du siège</dt><dd><span class="ac">à compléter</span></dd></div>
+        <div><dt>Téléphone</dt><dd><span class="ac">à compléter</span></dd></div>
+        <div><dt>Courriel</dt><dd><span class="ac">à compléter</span></dd></div>
+        <div><dt>Directeur de la publication</dt><dd><span class="ac">nom et fonction, à compléter</span></dd></div>
+        <div><dt>Responsable éditorial de la Web TV</dt><dd><span class="ac">à désigner</span></dd></div>
+      </dl>
+      <h2>Hébergeur</h2>
+      <dl>
+        <div><dt>Nom</dt><dd><span class="ac">à compléter une fois l’hébergement choisi</span></dd></div>
+        <div><dt>Adresse et téléphone</dt><dd><span class="ac">à compléter</span></dd></div>
+      </dl>
+      <h2>Crédits</h2>
+      <ul>
+        <li>Vidéos : réalisées par les étudiants du BTS Communication, avec les crédits de chaque personne sur la fiche de la vidéo.</li>
+        <li>Photographies : établissement et étudiants, publiées avec l’autorisation écrite des personnes photographiées. <span class="ac">crédits à compléter</span></li>
+        <li>Polices de caractères : Barlow et Barlow Condensed (Jeremy Tribby), IBM Plex Mono (IBM), sous licence SIL Open Font License 1.1.</li>
+      </ul>
+      <h2>Propriété intellectuelle</h2>
+      <p>Les textes, images, vidéos, logos et éléments graphiques de ce site sont protégés. Toute reproduction demande l’autorisation écrite de l’éditeur, sauf courte citation avec indication de la source.</p>
+      <h2>Responsabilité et liens</h2>
+      <p>L’éditeur s’efforce de publier des informations exactes et à jour. Pour l’admission, les informations qui font foi sont celles de Parcoursup. Les liens vers d’autres sites sont proposés à titre d’information : l’éditeur n’est pas responsable de leur contenu.</p>
+      <h2>Signaler un contenu ou demander un retrait</h2>
+      <p>Pour signaler un contenu ou demander le retrait d’une image, écrivez à <span class="ac">courriel à compléter</span>.</p>
+      <h2>Droit applicable</h2>
+      <p>Le droit français s’applique à ce site. En cas de litige, les tribunaux français sont compétents.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONNÉES PERSONNELLES ============ -->
+<section data-page="donnees" data-titre="Données personnelles" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Informations / Données personnelles</p>
+      <h1>Données personnelles</h1>
+      <p class="lead">Ce que le site collecte, pourquoi, pendant combien de temps, et comment exercer vos droits.</p>
+      <ul class="sous-nav">
+        <li><a href="#/mentions">Mentions légales</a></li>
+        <li><a href="#/donnees">Données personnelles</a></li>
+        <li><a href="#/cookies">Cookies</a></li>
+        <li><a href="#/accessibilite">Accessibilité</a></li>
+        <li><a href="#/plan">Plan du site</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap texte-legal">
+      <h2>Qui est responsable</h2>
+      <p>Le responsable du traitement est l’établissement qui édite ce site : <span class="ac">nom à compléter</span>.</p>
+      <p>Délégué à la protection des données : <span class="ac">nom et courriel à compléter</span>.</p>
+      <h2>Ce que le site collecte</h2>
+      <ul>
+        <li><strong>Formulaire de contact</strong> : nom, courriel, profil (lycéen, parent, entreprise ou autre) et message. Cela sert à vous répondre.</li>
+        <li><strong>Formulaire de commande</strong> : organisation, nom, courriel et description du besoin. Cela sert à examiner votre demande et à vous répondre.</li>
+        <li>Rien d’autre : pas de compte, pas de profil, pas de publicité.</li>
+      </ul>
+      <p>Fondement du traitement : l’intérêt de l’établissement à répondre aux demandes qu’on lui adresse. <span class="ac">à confirmer selon le statut</span></p>
+      <h2>Combien de temps</h2>
+      <p>Les messages sont conservés le temps de traiter votre demande, puis au plus <span class="ac">durée à fixer</span>. Vous pouvez demander leur suppression avant.</p>
+      <h2>Qui y a accès</h2>
+      <p>L’équipe pédagogique et le personnel habilité de l’établissement. Les messages transitent par <span class="ac">service d’envoi à préciser</span>, qui agit pour le compte de l’établissement. Vos données ne sont pas vendues et ne servent pas à de la publicité.</p>
+      <h2>Photos et vidéos de personnes</h2>
+      <p>Une personne n’apparaît sur le site qu’avec une autorisation écrite qui précise l’usage et la durée. Pour un mineur, l’autorisation est donnée par son représentant légal. Chaque vidéo porte la date de fin de son autorisation. Vous pouvez demander le retrait d’une image à tout moment.</p>
+      <h2>Vos droits</h2>
+      <p>Vous pouvez demander l’accès à vos données, leur rectification, leur effacement, la limitation de leur traitement ou vous y opposer. Écrivez à <span class="ac">courriel à compléter</span>. Une pièce d’identité peut vous être demandée en cas de doute.</p>
+      <p>Si la réponse ne vous satisfait pas, vous pouvez saisir la CNIL sur <a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COOKIES ============ -->
+<section data-page="cookies" data-titre="Cookies et traceurs" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Informations / Cookies et traceurs</p>
+      <h1>Cookies et traceurs</h1>
+      <p class="lead">Ce site ne dépose aucun cookie et n’enregistre rien dans votre navigateur.</p>
+      <ul class="sous-nav">
+        <li><a href="#/mentions">Mentions légales</a></li>
+        <li><a href="#/donnees">Données personnelles</a></li>
+        <li><a href="#/cookies">Cookies</a></li>
+        <li><a href="#/accessibilite">Accessibilité</a></li>
+        <li><a href="#/plan">Plan du site</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap texte-legal">
+      <h2>À l’ouverture du site</h2>
+      <p>Aucun cookie, aucun traceur publicitaire, aucun suivi d’un site à l’autre. C’est pourquoi le site ne vous affiche pas de bandeau de cookies.</p>
+      <h2>Polices de caractères</h2>
+      <p>Les polices de caractères sont hébergées sur ce site. Votre navigateur n’envoie aucune information à un service tiers pour les afficher.</p>
+      <h2>Vidéos</h2>
+      <p>Les vidéos sont hébergées chez un service tiers (YouTube dans ce prototype). Elles ne se chargent qu’après votre clic sur « Lancer la vidéo ». Avant ce clic, aucune donnée n’est transmise au service. Après, il peut déposer ses propres cookies, selon sa politique.</p>
+      <h2>Plan d’accès</h2>
+      <p>Le plan d’accès est une image fixe accompagnée d’un lien. Aucune carte interactive ne se charge sur le site.</p>
+      <h2>Mesure d’audience</h2>
+      <p>Aucune mesure d’audience n’est installée pour l’instant. Si elle l’est, elle se limitera à des statistiques anonymes, sans croisement avec d’autres données ni transmission à des tiers, dans les conditions fixées par la CNIL pour se passer de votre consentement. Cette page sera alors mise à jour.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCESSIBILITÉ ============ -->
+<section data-page="accessibilite" data-titre="Accessibilité" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Informations / Accessibilité</p>
+      <h1>Accessibilité</h1>
+      <p class="lead">Le site vise l’accessibilité pour toutes et tous, y compris les personnes en situation de handicap.</p>
+      <ul class="sous-nav">
+        <li><a href="#/mentions">Mentions légales</a></li>
+        <li><a href="#/donnees">Données personnelles</a></li>
+        <li><a href="#/cookies">Cookies</a></li>
+        <li><a href="#/accessibilite">Accessibilité</a></li>
+        <li><a href="#/plan">Plan du site</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap texte-legal">
+      <h2>État de conformité</h2>
+      <p>Ce site est en cours de conception. Son niveau de conformité au Référentiel général d’amélioration de l’accessibilité (RGAA, version 4) n’a pas encore été évalué. L’objectif est le niveau AA. Le résultat de la vérification prévue avant la mise en ligne sera publié sur cette page.</p>
+      <h2>Ce qui est déjà prévu dans la conception</h2>
+      <ul>
+        <li>Navigation possible au clavier seul, avec un lien « Aller au contenu » et un repère visible sur l’élément actif.</li>
+        <li>Contrastes de couleurs calculés : au moins 4,5 pour 1 pour le texte courant.</li>
+        <li>Pages pensées d’abord pour le téléphone, sans défilement horizontal.</li>
+        <li>Une alternative textuelle pour chaque image porteuse d’information.</li>
+        <li>Vidéos sous-titrées, avec transcription.</li>
+        <li>Animations que l’on peut arrêter, et qui s’arrêtent d’elles-mêmes si votre appareil demande moins de mouvement.</li>
+        <li>Une vidéo ne démarre jamais seule.</li>
+      </ul>
+      <h2>Signaler un défaut d’accessibilité</h2>
+      <p>Si vous ne parvenez pas à accéder à un contenu ou à une fonctionnalité, écrivez-nous : <span class="ac">courriel à compléter</span>, ou téléphonez au <span class="ac">numéro à compléter</span>. Nous vous répondrons sous <span class="ac">délai à fixer</span> et vous proposerons une alternative.</p>
+      <h2>Voies de recours</h2>
+      <p>Si vous nous avez signalé un défaut et que vous n’obtenez pas de réponse satisfaisante, vous pouvez vous adresser au Défenseur des droits :</p>
+      <ul>
+        <li>par le <a href="https://formulaire.defenseurdesdroits.fr/" rel="noopener">formulaire en ligne</a> ;</li>
+        <li>en contactant le <a href="https://www.defenseurdesdroits.fr/saisir/delegues" rel="noopener">délégué de votre région</a> ;</li>
+        <li>par courrier, sans affranchir : Défenseur des droits, Libre réponse 71120, 75342 Paris CEDEX 07.</li>
+      </ul>
+      <p>Ce texte est adapté du modèle de déclaration d’accessibilité publié par la direction interministérielle du numérique (DINUM).</p>
+      <h2>Établissement de cette déclaration</h2>
+      <p>Date : <span class="ac">à compléter</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN DU SITE ============ -->
+<section data-page="plan" data-titre="Plan du site" hidden>
+  <div class="sombre entete-page">
+    <div class="wrap">
+      <p class="fil"><a href="#/">Accueil</a> / Informations / Plan du site</p>
+      <h1>Plan du site</h1>
+      <p class="lead">Toutes les pages du site, en un seul endroit.</p>
+      <ul class="sous-nav">
+        <li><a href="#/mentions">Mentions légales</a></li>
+        <li><a href="#/donnees">Données personnelles</a></li>
+        <li><a href="#/cookies">Cookies</a></li>
+        <li><a href="#/accessibilite">Accessibilité</a></li>
+        <li><a href="#/plan">Plan du site</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap texte-legal">
+      <ul class="plan-site">
+        <li><a href="#/">Accueil</a></li>
+        <li><a href="#/formation">La formation</a>
+          <ul class="liste-puces"><li><a href="#/formation">Le BTS en bref</a></li><li><a href="#/coloration">La coloration journaliste reporter d’images</a></li></ul></li>
+        <li><a href="#/webtv">Web TV</a>
+          <ul class="liste-puces"><li><a href="#/video">Exemple de fiche vidéo</a></li></ul></li>
+        <li><a href="#/realisations">Réalisations</a></li>
+        <li><a href="#/admission">Admission</a></li>
+        <li><a href="#/entreprises">Entreprises et partenaires</a></li>
+        <li><a href="#/equipe">L’équipe</a></li>
+        <li><a href="#/actualites">Actualités et agenda</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li>Informations
+          <ul class="liste-puces"><li><a href="#/mentions">Mentions légales</a></li><li><a href="#/donnees">Données personnelles</a></li><li><a href="#/cookies">Cookies et traceurs</a></li><li><a href="#/accessibilite">Accessibilité</a></li><li><a href="#/plan">Plan du site</a></li></ul></li>
+        <li><a href="#/page">Site de l’établissement</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap pied-grille">
+    <div class="pied-marque">
+      <p class="marque-nom">BTS COM</p>
+      <p>BTS Communication à coloration journaliste reporter d’images · La Persévérance, Guadeloupe.</p>
+      <p><span class="ac">adresse et contacts à compléter</span></p>
+    </div>
+    <nav aria-labelledby="p-formation">
+      <h2 id="p-formation">La formation</h2>
+      <ul>
+        <li><a href="#/formation">Le BTS en bref</a></li>
+        <li><a href="#/coloration">La coloration JRI</a></li>
+        <li><a href="#/realisations">Réalisations</a></li>
+        <li><a href="#/admission">Admission</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="p-webtv">
+      <h2 id="p-webtv">Web TV et partenaires</h2>
+      <ul>
+        <li><a href="#/webtv">Toutes les vidéos</a></li>
+        <li><a href="#/entreprises">Entreprises et partenaires</a></li>
+        <li><a href="#/equipe">L’équipe</a></li>
+        <li><a href="#/actualites">Actualités</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="p-infos">
+      <h2 id="p-infos">Informations</h2>
+      <ul>
+        <li><a href="#/mentions">Mentions légales</a></li>
+        <li><a href="#/donnees">Données personnelles</a></li>
+        <li><a href="#/cookies">Cookies</a></li>
+        <li><a href="#/accessibilite">Accessibilité : non évaluée</a></li>
+        <li><a href="#/plan">Plan du site</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap pied-bas"><span>© La Persévérance</span><span>Prototype · direction graphique « Plateau »</span></div>
+</footer>
+
+<script>
+(function () {
+  var NB = " ";
+  var pages = Array.prototype.slice.call(document.querySelectorAll("[data-page]"));
+  var nav = document.getElementById("nav");
+  var menuBouton = document.querySelector(".menu-bouton");
+  var reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var parents = { coloration: "formation", video: "webtv" };
+  var premier = true;
+
+  function afficher() {
+    var h = location.hash;
+    if (h && h.indexOf("#/") !== 0) return;
+    var nom = (h || "#/").replace(/^#\/?/, "").split("?")[0] || "accueil";
+    var page = pages.filter(function (p) { return p.dataset.page === nom; })[0] || pages[0];
+    pages.forEach(function (p) { p.hidden = p !== page; });
+    var actif = parents[page.dataset.page] || page.dataset.page;
+    document.querySelectorAll("[data-lien]").forEach(function (a) {
+      if (a.dataset.lien === actif) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    page.querySelectorAll(".sous-nav a").forEach(function (a) {
+      if (a.getAttribute("href") === "#/" + page.dataset.page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    document.title = (page.dataset.titre ? page.dataset.titre + " · " : "") + "BTS Communication · La Persévérance";
+    nav.classList.remove("ouvert");
+    menuBouton.setAttribute("aria-expanded", "false");
+    window.scrollTo(0, 0);
+    if (!premier) {
+      var h1 = page.querySelector("h1");
+      if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
+    }
+    premier = false;
+  }
+  window.addEventListener("hashchange", afficher);
+  afficher();
+
+  menuBouton.addEventListener("click", function () {
+    var ouvert = nav.classList.toggle("ouvert");
+    menuBouton.setAttribute("aria-expanded", ouvert ? "true" : "false");
+    if (ouvert) nav.querySelector("a").focus();
+  });
+  // Lien d'évitement : place le focus sur le contenu sans modifier l'adresse de la page
+  document.querySelector(".lien-evitement").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("main").focus();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("ouvert")) { nav.classList.remove("ouvert"); menuBouton.setAttribute("aria-expanded", "false"); menuBouton.focus(); }
+  });
+
+  // Code temporel de l'écran d'accueil, avec bouton pause
+  var tc = document.querySelector("[data-timecode]");
+  var pause = document.querySelector("[data-pause]");
+  var secondes = 0, minuteur = null;
+  function deux(n) { return (n < 10 ? "0" : "") + n; }
+  function tic() { secondes++; tc.textContent = deux(Math.floor(secondes / 3600)) + ":" + deux(Math.floor(secondes / 60) % 60) + ":" + deux(secondes % 60); }
+  function lancer() { minuteur = setInterval(tic, 1000); pause.textContent = "Pause"; pause.setAttribute("aria-label", "Mettre en pause l’animation"); }
+  function arreter() { clearInterval(minuteur); minuteur = null; pause.textContent = "Lecture"; pause.setAttribute("aria-label", "Relancer l’animation"); }
+  if (reduit) arreter(); else lancer();
+  pause.addEventListener("click", function () { if (minuteur) arreter(); else lancer(); });
+
+  // Filtres de la Web TV
+  function filtrer() {
+    var f = document.querySelector('[data-groupe="format"][aria-pressed="true"]').dataset.filtre;
+    var e = document.querySelector('[data-groupe="etiquette"][aria-pressed="true"]').dataset.filtre;
+    var n = 0;
+    document.querySelectorAll("#grille-webtv .carte-video").forEach(function (c) {
+      var ok = (f === "tout" || c.dataset.format === f) && (e === "tout" || c.dataset.etiquette === e);
+      c.parentElement.hidden = !ok;
+      if (ok) n++;
+    });
+    document.getElementById("compte-videos").textContent = n === 0 ? "Aucune vidéo pour ces filtres" : n + (n > 1 ? " vidéos" : " vidéo") + " · exemples";
+  }
+  document.querySelectorAll(".filtre").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll('[data-groupe="' + b.dataset.groupe + '"]').forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      filtrer();
+    });
+  });
+
+  // Lecteur vidéo chargé seulement après le clic
+  document.querySelectorAll("[data-consentement]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var l = b.closest(".lecteur");
+      l.innerHTML = '<div class="lecteur-proto" tabindex="-1"><span>Lecteur vidéo</span><small>Prototype' + NB + ': la vidéo YouTube se chargerait ici, après le clic.</small></div>';
+      l.querySelector(".lecteur-proto").focus();
+    });
+  });
+
+  // Formulaires désactivés dans le prototype
+  document.querySelectorAll("form[data-proto]").forEach(function (f) {
+    f.querySelectorAll("[required]").forEach(function (c) {
+      c.addEventListener("input", function () { c.removeAttribute("aria-invalid"); });
+    });
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var m = f.querySelector(".retour-form");
+      var aCorriger = [], premier = null;
+      f.querySelectorAll("[required]").forEach(function (c) {
+        var v = c.value.trim();
+        var vide = !v;
+        var faux = !vide && c.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        if (vide || faux) {
+          c.setAttribute("aria-invalid", "true");
+          aCorriger.push(c.labels[0].firstChild.textContent.trim() + (faux ? " (adresse incorrecte)" : ""));
+          if (!premier) premier = c;
+        } else {
+          c.removeAttribute("aria-invalid");
+        }
+      });
+      if (premier) {
+        m.classList.add("erreur");
+        m.textContent = "Le formulaire n’est pas envoyé. À corriger" + NB + ": " + aCorriger.join(", ") + ".";
+        premier.focus();
+        return;
+      }
+      m.classList.remove("erreur");
+      m.textContent = "Prototype" + NB + ": l’envoi est désactivé. Dans le site final, le message partira vers l’adresse de la formation.";
+      m.focus();
+    });
+  });
+
+  // Bandeau d'annonce : un seul message à la fois, choisi dans l'administration
+  var bandeau = document.getElementById("bandeau");
+  var contenu = bandeau.querySelector(".bandeau-contenu");
+  var EX = '<span class="etiquette etiquette-exemple">Exemple</span>';
+  var modes = {
+    parcoursup: '<span class="bandeau-puce">Parcoursup</span><p class="bandeau-texte">Candidater en BTS Communication' + NB + ': tout se passe sur Parcoursup.</p><a class="bandeau-lien" href="#/admission">Les étapes</a>',
+    jpo: '<span class="bandeau-puce">Portes ouvertes</span><p class="bandeau-texte">Rencontrez l’équipe et les étudiants' + NB + ': <span class="ac">date à compléter</span></p><a class="bandeau-lien" href="#/actualites">Voir l’agenda</a>',
+    direct: '<span class="bandeau-puce"><span class="bandeau-point" aria-hidden="true"></span>En direct</span><p class="bandeau-texte">Les étudiants sont en plateau' + NB + ': suivez l’émission.</p><a class="bandeau-lien" href="#/video">Regarder</a>' + EX,
+    nouveau: '<span class="bandeau-puce">Nouveau</span><p class="bandeau-texte">Coulisses' + NB + ': premier test de la régie mobile.</p><a class="bandeau-lien" href="#/video">Voir la vidéo</a>' + EX,
+    etablissement: '<span class="logo-vide">Logo de l’établissement</span><p class="bandeau-texte">Une formation de La Persévérance, Guadeloupe <span class="ac">statut à valider</span></p><a class="bandeau-lien" href="#/page">Site de l’établissement</a><span class="logo-vide">Région académique · autorisation à demander</span>'
+  };
+  // Rien n'est enregistré dans le navigateur : le bandeau fermé le reste jusqu'au rechargement de la page
+  bandeau.querySelector(".bandeau-fermer").addEventListener("click", function () {
+    bandeau.hidden = true;
+    document.querySelector(".marque").focus();
+  });
+  document.querySelectorAll("[data-mode]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var m = b.dataset.mode;
+      bandeau.className = "bandeau bandeau-" + m;
+      contenu.innerHTML = modes[m];
+      bandeau.hidden = false;
+      document.querySelectorAll("[data-mode]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    });
+  });
+
+  // Apparitions discrètes au défilement
+  if (!reduit && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("anim");
+    var io = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("vu"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll(".apparait").forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
